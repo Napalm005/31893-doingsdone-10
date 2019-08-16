@@ -1,9 +1,0 @@
-{
-  "search.collapseResults": "alwaysCollapse",
-  "search.exclude": {
-    "**/build": true
-  },
-  "search.useGlobalIgnoreFiles": true,
-  "liveServer.settings.port": 4500,
-  "liveServer.settings.CustomBrowser" : "chrome",
-}
