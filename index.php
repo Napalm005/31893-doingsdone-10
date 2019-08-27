@@ -41,11 +41,16 @@ $tasks = [
     ]
 ];
 
-function count_tasks($tasks = [], $progectTitle = '') {
+/**
+ * @param array $tasks
+ * @param string $progectTitle
+ * @return number $tasks_count
+ */
+function countTasks(array $tasks, string $progectTitle): int {
     $tasks_count = 0;
 
     foreach ($tasks as $key => $task) {
-        if (($task['category'] !== $progectTitle)) {
+        if ($task['category'] !== $progectTitle) {
             continue;
         };
         $tasks_count++;
@@ -97,7 +102,7 @@ function count_tasks($tasks = [], $progectTitle = '') {
                         <?php foreach ($propgects as $progect): ?>
                         <li class="main-navigation__list-item">
                             <a class="main-navigation__list-item-link" href="#"><?=$progect; ?></a>
-                            <span class="main-navigation__list-item-count"><?= count_tasks($tasks, $progect); ?></span>
+                            <span class="main-navigation__list-item-count"><?= countTasks($tasks, $progect); ?></span>
                         </li>
                         <?php endforeach; ?>
                     </ul>
