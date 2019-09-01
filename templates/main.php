@@ -44,7 +44,7 @@
             <?php if (($show_complete_tasks !== 1) && $task['executed']) {
                 continue;
             };?>
-            <tr class="tasks__item task  <?= $task['executed'] ? 'task--completed' : ''; ?>">
+            <tr class="tasks__item task <?= isHotTask($task['date_completed']) ? 'task--important' : ''; ?>  <?= $task['executed'] ? 'task--completed' : ''; ?>">
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden task__checkbox" type="checkbox" value="1" <?= $task['executed'] ? checked : ''; ?>>
