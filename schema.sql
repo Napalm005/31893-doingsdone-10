@@ -16,8 +16,7 @@ CREATE TABLE task (
     executed TINYINT DEFAULT 0,
     title CHAR(255),
     file_path CHAR(255),
-    date_completed TIMESTAMP DEFAULT NULL,
-    user_id INT,
+    date_completed TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     project_id INT
 );
 
@@ -28,3 +27,6 @@ CREATE TABLE users (
     name CHAR(128),
     password CHAR(64)
 );
+
+CREATE UNIQUE INDEX email ON users(email);
+CREATE INDEX t_title ON task(title);
