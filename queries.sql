@@ -3,7 +3,7 @@ INSERT INTO users (email, name, password, dt_add)
 VALUES ('john.smith@gmail.com', 'John', 'Qwert12345', NOW()), ('vasia@gmail.com', 'Vasia', '12345Qwert', NOW());
 
 -- Заполняем таблицу с проектами
-INSERT INTO project (name, user_id)
+INSERT INTO projects (name, user_id)
 VALUES ('Входящие', 1), ('Учеба', 2), ('Работа', 1), ('Домашние дела', 2), ('Авто', 1);
 
 -- Заполняем таблицу с задачами
