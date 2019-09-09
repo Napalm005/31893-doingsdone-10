@@ -4,29 +4,29 @@ CREATE DATABASE doingsdone
   
 USE doingsdone;
 
-CREATE TABLE project (
+CREATE TABLE projects (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	name CHAR(128),
 	user_id INT
 );
 
-CREATE TABLE task (
+CREATE TABLE tasks (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    executed TINYINT DEFAULT 0,
-    title CHAR(255),
-    file_path CHAR(255),
-    date_completed TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    project_id INT
+	executed TINYINT DEFAULT 0,
+	title CHAR(255),
+	file_path CHAR(255),
+	date_completed TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	project_id INT
 );
 
 CREATE TABLE users (
 	id INT AUTO_INCREMENT PRIMARY KEY,
-    dt_add TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	dt_add TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	email CHAR(128) UNIQUE,
-    name CHAR(128),
-    password CHAR(64)
+	name CHAR(128),
+	password CHAR(64)
 );
 
 CREATE UNIQUE INDEX email ON users(email);
-CREATE INDEX t_title ON task(title);
+CREATE INDEX t_title ON tasks(title);
